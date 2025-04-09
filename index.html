@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Vishnu Enterprises | Power Systems & Energy Management Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #17a2b8;
+            --accent: #ffc107;
+            --dark: #343a40;
+            --light: #f8f9fa;
+            --success: #28a745;
+            --danger: #dc3545;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .top-bar {
+            background-color: var(--dark);
+            color: white;
+            padding: 8px 0;
+        }
+        
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            font-size: 14px;
+        }
+        
+        .top-bar-contact span {
+            margin-right: 20px;
+        }
+        
+        .top-bar-contact i {
+            margin-right: 5px;
+            color: var(--accent);
+        }
+        
+        .top-bar-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            transition: color 0.3s;
+        }
+        
+        .top-bar-links a:hover {
+            color: var(--accent);
+        }
+        
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+        
+        .logo img {
+            height: 60px;
+        }
+        
+        .search-bar {
+            flex-grow: 1;
+            margin: 0 40px;
+            position: relative;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            font-size: 15px;
+        }
+        
+        .search-bar button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-action {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 25px;
+            text-decoration: none;
+            color: var(--dark);
+        }
+        
+        .header-action i {
+            font-size: 22px;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .cart-count {
+            background-color: var(--danger);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            position: absolute;
+            top: -5px;
+            right: -10px;
+        }
+        
+        /* Navigation Styles */
+        nav {
+            background-color: var(--primary);
+            padding: 15px 0;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .category-dropdown {
+            position: relative;
+            background-color: var(--accent);
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--dark);
+        }
+        
+        .category-dropdown i {
+            margin-right: 10px;
+        }
+        
+        .main-menu {
+            list-style: none;
+            display: flex;
+        }
+        
+        .main-menu li {
+            position: relative;
+        }
+        
+        .main-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        
+        .main-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x600') center/cover no-repeat;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Featured Categories */
+        .featured-categories {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 32px;
+            display: inline-block;
+            background-color: #f5f7f9;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: var(--light-gray);
+            z-index: 0;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .category-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .category-image {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .category-content {
+            padding: 20px;
+        }
+        
+        .category-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .category-content p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .browse-link {
+            display: inline-block;
+            color: var(--primary);
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .browse-link i {
+            margin-left: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .browse-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Featured Products */
+        .featured-products {
+            background-color: white;
+            padding: 60px 0;
+        }
+        
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #f9f9f9;
+            position: relative;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .product-actions {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-action {
+            background-color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            color: var(--dark);
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .product-action:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .product-content {
+            padding: 20px;
+        }
+        
+        .product-category {
+            color: var(--gray);
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .product-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .product-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .stars {
+            color: #ffc107;
+            margin-right: 5px;
+        }
+        
+        .rating-count {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .product-price {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .current-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary);
+            margin-right: 10px;
+        }
+        
+        .old-price {
+            font-size: 16px;
+            color: var(--gray);
+            text-decoration: line-through;
+        }
+        
+        .add-to-cart {
+            display: block;
+            width: 100%;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #004494;
+        }
+        
+        /* Features Section */
+        .features {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(0, 86, 179, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .feature-icon i {
+            font-size: 36px;
+            color: var(--primary);
+        }
+        
+        .feature h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .feature p {
+            color: var(--gray);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding-top: 60px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .contact-info {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: var(--accent);
+        }
+        
+        .newsletter input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 4px;
+        }
+        
+        .newsletter button {
+            background-color: var(--accent);
+            color: var(--dark);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .newsletter button:hover {
+            background-color: #e6ac00;
+        }
+        
+        .bottom-footer {
+            background-color: #1c1f23;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        .bottom-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .copyright {
+            margin-bottom: 10px;
+        }
+        
+        .payment-methods img {
+            height: 30px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .main-header {
+                flex-wrap: wrap;
+            }
+            
+            .search-bar {
+                order: 3;
+                margin: 15px 0 0;
+                width: 100%;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .category-dropdown {
+                margin-bottom: 15px;
+            }
+            
+            .main-menu {
+                flex-direction: column;
+            }
+            
+            .hero {
+                height: 400px;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .bottom-footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="top-bar-content">
+                <div class="top-bar-contact">
+                    <span><i class="fas fa-phone-alt"></i> +91 1234567890</span>
+                    <span><i class="fas fa-envelope"></i> info@shreevishnu.com</span>
+                </div>
+                <div class="top-bar-links">
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> Find Store</a>
+                    <a href="#"><i class="fas fa-truck"></i> Track Order</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://via.placeholder.com/200x60?text=Shree+Vishnu" alt="Shree Vishnu Enterprises Logo">
+                </a>
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search for power systems, grid components, energy solutions...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="header-actions">
+                <a href="#" class="header-action">
+                    <i class="fas fa-user"></i>
+                    <span>Account</span>
+                </a>
+                <a href="#" class="header-action">
+                    <i class="fas fa-heart"></i>
+                    <span>Wishlist</span>
+                </a>
+                <a href="#" class="header-action" style="position: relative;">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Cart</span>
+                    <span class="cart-count">3</span>
+                </a>
+            </div>
+        </div>
+        
+        <nav>
+            <div class="nav-container">
+                <div class="category-dropdown">
+                    <i class="fas fa-th-large"></i> All Categories
+                </div>
+                
+                <ul class="main-menu">
+                    <li><a href="#">Power Systems</a></li>
+                    <li><a href="#">Grid Operations</a></li>
+                    <li><a href="#">Energy Management</a></li>
+                    <li><a href="#">Automation Solutions</a></li>
+                    <li><a href="#">Technical Support</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Powering the Future with Reliable Energy Solutions</h1>
+            <p>Discover industry-leading power systems, grid operation components, and energy management solutions trusted by professionals worldwide.</p>
+            <a href="#" class="cta-button">Explore Products <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+    
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+        <div class="section-title">
+            <h2>Featured Solutions</h2>
+        </div>
+        
+        <div class="category-grid">
+            <div class="category-card">
+                <div class="category-image" style="background-image: url('https://via.placeholder.com/400x300?text=Power+Systems')"></div>
+                <div class="category-content">
+                    <h3>Power Systems</h3>
+                    <p>Complete solutions for reliable power generation, transmission, and distribution systems.</p>
+                    <a href="#" class="browse-link">Browse Products <i class="fas fa-angle-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-image" style="background-image: url('https://via.placeholder.com/400x300?text=Grid+Operations')"></div>
+                <div class="category-content">
+                    <h3>Grid Operations</h3>
+                    <p>Advanced components and systems for efficient and stable electrical grid operations.</p>
+                    <a href="#" class="browse-link">Browse Products <i class="fas fa-angle-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-image" style="background-image: url('https://via.placeholder.com/400x300?text=Energy+Management')"></div>
+                <div class="category-content">
+                    <h3>Energy Management</h3>
+                    <p>Innovative solutions for monitoring, controlling, and optimizing energy consumption.</p>
+                    <a href="#" class="browse-link">Browse Products <i class="fas fa-angle-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-image" style="background-image: url('https://via.placeholder.com/400x300?text=Smart+Grid')"></div>
+                <div class="category-content">
+                    <h3>Smart Grid Technology</h3>
+                    <p>Next-generation solutions for modern, efficient, and intelligent power grids.</p>
+                    <a href="#" class="browse-link">Browse Products <i class="fas fa-angle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="products-container">
+            <div class="section-title">
+                <h2>Featured Products</h2>
+            </div>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://via.placeholder.com/400x400?text=Power+Transformer')">
+                        <span class="product-badge">Best Seller</span>
+                        <div class="product-actions">
+                            <a href="#" class="product-action"><i class="far fa-heart"></i></a>
+                            <a href="#" class="product-action"><i class="fas fa-exchange-alt"></i></a>
+                            <a href="#" class="product-action"><i class="far fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Power Systems</div>
+                        <h3 class="product-title">High-Efficiency Power Transformer 100KVA</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(24)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹245,000</span>
+                            <span class="old-price">₹275,000</span>
+                        </div>
+                        <a href="#" class="add-to-cart">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://via.placeholder.com/400x400?text=Grid+Analyzer')">
+                        <span class="product-badge">New</span>
+                        <div class="product-actions">
+                            <a href="#" class="product-action"><i class="far fa-heart"></i></a>
+                            <a href="#" class="product-action"><i class="fas fa-exchange-alt"></i></a>
+                            <a href="#" class="product-action"><i class="far fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Grid Operations</div>
+                        <h3 class="product-title">Advanced Grid Performance Analyzer</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(18)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹135,000</span>
+                        </div>
+                        <a href="#" class="add-to-cart">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://via.placeholder.com/400x400?text=Energy+Monitor')">
+                        <div class="product-actions">
+                            <a href="#" class="product-action"><i class="far fa-heart"></i></a>
+                            <a href="#" class="product-action"><i class="fas fa-exchange-alt"></i></a>
+                            <a href="#" class="product-action"><i class="far fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Energy Management</div>
+                        <h3 class="product-title">Industrial Energy Monitoring System</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(36)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹87,500</span>
+                            <span class="old-price">₹95,000</span>
+                        </div>
+                        <a href="#" class="add-to-cart">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://via.placeholder.com/400x400?text=Circuit+Breaker')">
+                        <div class="product-actions">
+                            <a href="#" class="product-action"><i class="far fa-heart"></i></a>
+                            <a href="#" class="product-action"><i class="fas fa-exchange-alt"></i></a>
+                            <a href="#" class="product-action"><i class="far fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Grid Operations</div>
+                        <h3 class="product-title">High-Capacity Circuit Breaker System</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(29)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹118,000</span>
+                            <span class="old-price">₹130,000</span>
+                        </div>
+                        <a href="#" class="add-to-cart">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-title">
+            <h2>Why Choose Us</h2>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h3>Premium Quality</h3>
+                <p>All our products meet the highest industry standards and are thoroughly tested for reliability.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>Expert Support</h3>
+                <p>Our team of power systems specialists is available 24/7 to provide technical assistance.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <h3>Nationwide Delivery</h3>
+                <p>Fast and reliable shipping to all major cities across India with installation services.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Warranty Guaranteed</h3>
+                <p>All products come with comprehensive warranty and after-sales support.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="featured-products">
+        <div class="products-container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+            </div>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p style="margin-top: 15px; margin-bottom: 15px;">"Shree Vishnu Enterprises has been our trusted supplier for power system components for over 5 years. Their quality and service are unmatched in the industry."</p>
+                        <div style="display: flex; align-items: center;">
+                            <div style="width: 50px; height: 50px; border-radius: 50%; background-image: url('https://via.placeholder.com/50x50'); background-size: cover; margin-right: 15px;"></div>
+                            <div>
+                                <h4 style="margin: 0;">Rajesh Kumar</h4>
+                                <p style="margin: 0; color: var(--gray);">Chief Engineer, Tata Power</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p style="margin-top: 15px; margin-bottom: 15px;">"The energy management solutions from Shree Vishnu have helped us reduce operational costs by 30%. Their technical support team is excellent."</p>
+                        <div style="display: flex; align-items: center;">
+                            <div style="width: 50px; height: 50px; border-radius: 50%; background-image: url('https://via.placeholder.com/50x50'); background-size: cover; margin-right: 15px;"></div>
+                            <div>
+                                <h4 style="margin: 0;">Priya Sharma</h4>
+                                <p style="margin: 0; color: var(--gray);">Operations Director, Reliance Industries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p style="margin-top: 15px; margin-bottom: 15px;">"We've implemented smart grid solutions from Shree Vishnu across 3 of our facilities. The ROI has been impressive and the systems are extremely reliable."</p>
+                        <div style="display: flex; align-items: center;">
+                            <div style="width: 50px; height: 50px; border-radius: 50%; background-image: url('https://via.placeholder.com/50x50'); background-size: cover; margin-right: 15px;"></div>
+                            <div>
+                                <h4 style="margin: 0;">Vijay Malhotra</h4>
+                                <p style="margin: 0; color: var(--gray);">Technical Director, Adani Power</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Partners Section -->
+    <section class="features">
+        <div class="section-title">
+            <h2>Our Partners</h2>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; margin-top: 20px;">
+            <img src="https://via.placeholder.com/180x80?text=Partner+1" alt="Partner Logo" style="margin: 10px;">
+            <img src="https://via.placeholder.com/180x80?text=Partner+2" alt="Partner Logo" style="margin: 10px;">
+            <img src="https://via.placeholder.com/180x80?text=Partner+3" alt="Partner Logo" style="margin: 10px;">
+            <img src="https://via.placeholder.com/180x80?text=Partner+4" alt="Partner Logo" style="margin: 10px;">
+            <img src="https://via.placeholder.com/180x80?text=Partner+5" alt="Partner Logo" style="margin: 10px;">
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p style="color: #ddd; margin-bottom: 20px;">Shree Vishnu Enterprises has been a trusted provider of power systems and energy management solutions for over 25 years, serving industries across India.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Products</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Power Systems</a></li>
+                    <li><a href="#">Grid Components</a></li>
+                    <li><a href="#">Energy Management</a></li>
+                    <li><a href="#">Smart Grid Solutions</a></li>
+                    <li><a href="#">Automation Systems</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <div class="contact-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>123 Industrial Area, Phase 2<br>New Delhi, 110001, India</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+91 1234567890</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@shreevishnu.com</span>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p style="color: #ddd; margin-bottom: 15px;">Subscribe to our newsletter for the latest updates on products and offers.</p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Your Email Address">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bottom-footer">
+            <div class="bottom-footer-content">
+                <div class="copyright">
+                    &copy; 2025 Shree Vishnu Enterprises. All Rights Reserved.
+                </div>
+                <div class="payment-methods">
+                    <img src="https://via.placeholder.com/200x30?text=Payment+Methods" alt="Payment Methods">
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript (optional) -->
+    <script>
+        // Add any JavaScript functionality here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Example: Dropdown toggle for category menu
+            const categoryDropdown = document.querySelector('.category-dropdown');
+            categoryDropdown.addEventListener('click', function() {
+                // Toggle category dropdown menu
+                console.log('Category dropdown clicked');
+            });
+            
+            // Example: Product quick view
+            const quickViewButtons = document.querySelectorAll('.product-action .far.fa-eye').forEach(button => {
+                button.parentElement.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Quick view clicked');
+                });
+            });
+            
+            // Example: Add to cart functionality
+            const addToCartButtons = document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Product added to cart');
+                    alert('Product added to your cart!');
+                });
+            });
+            
+            // Example: Newsletter subscription
+            const newsletterForm = document.querySelector('.newsletter');
+            newsletterForm.querySelector('button').addEventListener('click', function() {
+                const email = newsletterForm.querySelector('input').value;
+                if (email) {
+                    alert('Thank you for subscribing to our newsletter!');
+                    newsletterForm.querySelector('input').value = '';
+                } else {
+                    alert('Please enter a valid email address.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
